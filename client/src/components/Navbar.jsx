@@ -59,7 +59,7 @@ const Navbar = () => {
                                     className={`text-md font-bold transition-all duration-300 hover:text-indigo-600 ${location.pathname.includes('dashboard') || location.pathname.includes('admin') ? 'text-indigo-600' : 'text-gray-500'
                                         }`}
                                 >
-                                    Portal
+                                    Dashboard
                                 </Link>
                                 <div className="flex items-center gap-6">
                                     <div className="flex items-center gap-2 bg-indigo-50 px-3 py-1.5 rounded-full border border-indigo-100">

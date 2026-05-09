@@ -59,7 +59,7 @@ const EventDetail = () => {
                 key: data.key,
                 amount: data.amount,
                 currency: data.currency,
-                name: 'Eventora',
+                name: 'EventForge',
                 description: data.description,
                 order_id: data.orderId,
                 prefill: {

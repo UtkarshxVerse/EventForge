@@ -258,7 +258,7 @@ const Home = ({ viewOnly }) => {
                                     variants={cardVariants}
                                     className="group relative"
                                 >
-                                    <div className="bg-white rounded-[2.2rem] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500 hover:-translate-y-2">
+                                    <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl shadow-indigo-100/50 border border-indigo-50 flex flex-col h-full transition-transform duration-500 hover:-translate-y-4">
                                         <div className="relative h-72 overflow-hidden">
                                             {event.image ? (
                                                 <img src={event.image} alt={event.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
@@ -291,7 +291,7 @@ const Home = ({ viewOnly }) => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                                         </div>
 
-                                        <div className="p-8 flex-grow flex flex-col">
+                                        <div className="p-10 flex-grow flex flex-col">
                                             <div className="flex items-center justify-between mb-6">
                                                 <div className="flex items-center gap-2 text-indigo-400 font-black text-[10px] uppercase tracking-widest">
                                                     <FaMapMarkerAlt className="text-indigo-600" /> {event.location?.split(',')[0] || 'Remote'}
@@ -305,13 +305,11 @@ const Home = ({ viewOnly }) => {
                                             <h3 className="text-2xl font-black text-[#1e1b4b] mb-8 leading-tight group-hover:text-indigo-600 transition-colors">{event.title}</h3>
 
                                             <div className="mt-auto pt-8 border-t border-indigo-50/50 flex items-center justify-between">
-                                                <div className="flex flex-col gap-2 flex-grow">
-                                                    <div className="flex justify-between items-end">
-                                                        <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Availability</span>
-                                                        <span className="text-[10px] font-black text-[#1e1b4b]">
-                                                            {event.availableSeats} / {event.totalSeats}
-                                                        </span>
-                                                    </div>
+                                                <div className="flex flex-col gap-1">
+                                                    <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Availability</span>
+                                                    <span className="text-sm font-black text-[#1e1b4b] flex items-center gap-1.5">
+                                                        {event.availableSeats} <span className="text-gray-300 font-medium">/ {event.totalSeats}</span>
+                                                    </span>
                                                 </div>
 
                                                 <Link
@@ -445,7 +443,7 @@ const Home = ({ viewOnly }) => {
                     </div>
                     <div className="pt-12 border-t border-indigo-50 flex flex-col md:flex-row justify-between items-center gap-8">
                         <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest leading-loose">
-                            &copy; {new Date().getFullYear()} EVENTORA CORE LTD. <br />
+                            &copy; {new Date().getFullYear()} EVENTFORGE CORE LTD. <br />
                             ALL SIGNALS ENCRYPTED.
                         </p>
                         <div className="flex gap-10">

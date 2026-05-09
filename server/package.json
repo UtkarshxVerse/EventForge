@@ -1,7 +1,7 @@
 {
-    "name": "eventora-server",
+    "name": "eventforge-server",
     "version": "1.0.0",
-    "description": "Eventora Backend",
+    "description": "EventForge Backend",
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
