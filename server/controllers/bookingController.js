@@ -54,7 +54,7 @@ exports.createRazorpayOrder = async (req, res) => {
         const order = await razorpayInstance.orders.create({
             amount: Math.round(event.ticketPrice * 100),
             currency: 'INR',
-            receipt: `eventora_${Date.now()}`,
+            receipt: `EventForge_${Date.now()}`,
             payment_capture: 1
         });
 

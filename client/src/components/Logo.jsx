@@ -55,7 +55,7 @@ const Logo = ({ size = 'text-2xl', iconSize = 'w-11 h-11', showText = true }) =>
                         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                         className={`${size} font-black text-[#1e1b4b] tracking-[-0.05em] uppercase leading-none`}
                     >
-                        EVENT<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-500">ORA</span>
+                        EVENT<span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-500">FORGE</span>
                     </motion.span>
                     <div className="flex items-center gap-2 mt-1 px-0.5">
                         <div className="flex gap-1 items-end">

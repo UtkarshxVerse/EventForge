@@ -348,7 +348,7 @@ const Home = ({ viewOnly }) => {
             {/* Platform Trust Row */}
             <section className="container mx-auto px-6 mb-32 grid grid-cols-1 md:grid-cols-3 gap-16">
                 {[
-                    { icon: <FaBolt />, title: 'Blitz Engines', desc: 'Secure your entry in under 12 seconds with our high-frequency booking protocol.' },
+                    { icon: <FaBolt />, title: 'Easy Bookings', desc: 'Secure your entry with fast, simple and hassle free bookings.' },
                     { icon: <FaGlobeAmericas />, title: 'Geo-Locked Events', desc: 'Access exclusive local gatherings that never make it to public social media.' },
                     { icon: <FaHeart />, title: 'Vetted Quality', desc: 'We filter out the noise. Every event is manually verified by our culture team.' }
                 ].map((item, i) => (
@@ -415,11 +415,11 @@ const Home = ({ viewOnly }) => {
                     <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-20">
                         <div className="max-w-md">
                             <div className="flex items-center gap-4 mb-10 group">
-                            <Logo size="text-3xl" iconSize="w-12 h-12" />
-                        </div>
+                                <Logo size="text-3xl" iconSize="w-12 h-12" />
+                            </div>
                             <p className="text-gray-400 font-medium leading-relaxed text-lg">
-                                We are the architectural hub for experiential living.
-                                Designed for those who demand more than the ordinary.
+                                Your gateway to exciting events and unforgettable nights.
+                                Easy booking. Endless experiences.
                             </p>
                         </div>
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-20">

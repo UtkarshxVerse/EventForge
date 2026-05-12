@@ -83,7 +83,7 @@ const Events = () => {
                                     <FaSearch className="text-indigo-400 text-lg" />
                                     <input
                                         type="text"
-                                        placeholder="Scan for frequencies..."
+                                        placeholder="Search for events..."
                                         className="w-full px-5 py-4 bg-transparent focus:outline-none text-[#1e1b4b] font-bold text-md placeholder-indigo-200"
                                         value={search}
                                         onChange={(e) => setSearch(e.target.value)}
@@ -102,9 +102,9 @@ const Events = () => {
                 ) : events.length === 0 ? (
                     <div className="text-center py-40 bg-white/50 backdrop-blur-3xl rounded-[4rem] border border-white/40 shadow-2xl shadow-indigo-100/10">
                         <FaCompass className="text-indigo-100 text-8xl mx-auto mb-8" />
-                        <h3 className="text-3xl font-black text-[#1e1b4b] mb-4 uppercase italic">Zero Feedback.</h3>
-                        <p className="text-gray-400 font-medium mb-12 text-lg">No active signals found for this sector.</p>
-                        <button onClick={() => setSearch('')} className="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl hover:bg-[#1e1b4b] transition-all">Reset Radar</button>
+                        <h3 className="text-3xl font-black text-[#1e1b4b] mb-4 uppercase italic">Event not Found !</h3>
+                        <p className="text-gray-400 font-medium mb-12 text-lg">No active events found for this sector.</p>
+                        <button onClick={() => setSearch('')} className="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl hover:bg-[#1e1b4b] transition-all">Reset Search<i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                 ) : (
                     <motion.div
