@@ -212,7 +212,7 @@ const Home = ({ viewOnly }) => {
                         </div>
                     </motion.div>
                     <div className="glass px-8 py-3 rounded-2xl text-[#1e1b4b] font-black text-xs tracking-widest uppercase border-indigo-50">
-                        {events.length} SIGNALS FOUND
+                        {events.length} EVENTS FOUND
                     </div>
                 </div>
 
