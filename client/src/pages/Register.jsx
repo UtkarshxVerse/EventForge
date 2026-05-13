@@ -42,8 +42,8 @@ const Register = () => {
             className="max-w-md mx-auto bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-indigo-100 border border-indigo-50"
         >
             <div className="text-center mb-10">
-                <h2 className="text-4xl font-black text-[#1e1b4b] mb-2 tracking-tighter">Join Core.</h2>
-                <p className="text-gray-400 font-medium uppercase tracking-widest text-[10px]">Initialize New Account</p>
+                <h2 className="text-4xl font-black text-[#1e1b4b] mb-2 tracking-tighter">Create New Account</h2>
+                <p className="text-gray-400 font-medium uppercase tracking-widest text-[10px]">SIGNUP</p>
             </div>
 
             {error && <div className="bg-red-50 text-red-600 p-4 rounded-2xl mb-8 text-center text-xs font-bold border border-red-100">{error}</div>}
@@ -52,7 +52,7 @@ const Register = () => {
                 {!showOTP ? (
                     <>
                         <div className="space-y-2">
-                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest px-1">Identity Name</label>
+                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest px-1">Name</label>
                             <input
                                 type="text"
                                 required
@@ -62,7 +62,7 @@ const Register = () => {
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest px-1">Electronic Mail</label>
+                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest px-1">Email</label>
                             <input
                                 type="email"
                                 required
@@ -72,7 +72,7 @@ const Register = () => {
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest px-1">Secure Passkey</label>
+                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest px-1">Password</label>
                             <input
                                 type="password"
                                 required
@@ -109,7 +109,7 @@ const Register = () => {
                     disabled={loading}
                     className="w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-[#1e1b4b] transition shadow-lg shadow-indigo-100 active:scale-95 mt-4"
                 >
-                    {loading ? 'INITIALIZING...' : (showOTP ? 'VERIFY & ENTER' : 'START JOURNEY')}
+                    {loading ? 'INITIALIZING...' : (showOTP ? 'VERIFY & ENTER' : 'SignUp')}
                 </button>
             </form>
 

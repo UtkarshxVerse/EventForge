@@ -43,7 +43,7 @@ const Login = () => {
         <div className="max-w-md mx-auto bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-indigo-100 border border-indigo-50">
             <div className="text-center mb-10">
                 <h2 className="text-4xl font-black text-[#1e1b4b] mb-2 tracking-tighter">Welcome back.</h2>
-                <p className="text-gray-400 font-medium uppercase tracking-widest text-[10px]">Portal Access Protocols</p>
+                <p className="text-gray-400 font-medium uppercase tracking-widest text-[10px]">LOGIN</p>
             </div>
 
             {error && <div className="bg-red-50 text-red-600 p-3 rounded-lg mb-6 text-center shadow-inner border border-red-100">{error}</div>}
@@ -52,7 +52,7 @@ const Login = () => {
                 {!showOTP ? (
                     <>
                         <div>
-                            <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-3">Email </label>
                             <input
                                 type="email"
                                 required
@@ -91,12 +91,12 @@ const Login = () => {
                     disabled={loading}
                     className="w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-[#1e1b4b] transition shadow-lg shadow-indigo-100 active:scale-95"
                 >
-                    {loading ? 'Authenticating...' : (showOTP ? 'VERIFY' : 'ACCESS PORTAL')}
+                    {loading ? 'Authenticating...' : (showOTP ? 'VERIFY' : 'Login')}
                 </button>
             </form>
 
             <p className="text-center mt-10 text-gray-400 font-medium">
-                New here? <Link to="/register" className="text-indigo-600 font-black hover:underline">Join Core</Link>
+                New here? <Link to="/register" className="text-indigo-600 font-black hover:underline">Sign Up</Link>
             </p>
         </div>
     );

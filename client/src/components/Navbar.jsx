@@ -80,7 +80,7 @@ const Navbar = () => {
                             <div className="flex items-center gap-8">
                                 <Link
                                     to="/login"
-                                    className="text-sm font-bold text-gray-500 hover:text-black transition-all"
+                                    className="text-md font-bold text-gray-500 hover:text-black transition-all"
                                 >
                                     Login
                                 </Link>
