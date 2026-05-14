@@ -24,20 +24,20 @@ exports.bookEvent = async (req, res) => {
         if (!event) return res.status(404).json({ message: 'Event not found' });
         if (event.availableSeats <= 0) return res.status(400).json({ message: 'No seats available' });
 
-        const existingBooking = await Booking.findOne({ userId: req.user.id, eventId });
-        if (existingBooking && existingBooking.status !== 'cancelled') {
-            return res.status(400).json({ message: 'Already booked or pending' });
-        }
-
         const booking = await Booking.create({
             userId: req.user.id,
             eventId,
-            status: 'pending',
-            paymentStatus: 'not_paid',
+            status: 'confirmed',
+            paymentStatus: event.ticketPrice === 0 ? 'paid' : 'not_paid',
             amount: event.ticketPrice
         });
 
-        res.status(201).json({ message: 'Booking request submitted', booking });
+        event.availableSeats -= 1;
+        await event.save();
+
+        await sendBookingEmail(req.user.email, req.user.name, event.title);
+
+        res.status(201).json({ message: 'Booking confirmed successfully', booking });
     } catch (error) {
         res.status(500).json({ message: 'Server Error', error: error.message });
     }
@@ -81,11 +81,6 @@ exports.verifyRazorpayPayment = async (req, res) => {
         const event = await Event.findById(eventId);
         if (!event) return res.status(404).json({ message: 'Event not found' });
         if (event.availableSeats <= 0) return res.status(400).json({ message: 'No seats available' });
-
-        const existingBooking = await Booking.findOne({ userId: req.user.id, eventId });
-        if (existingBooking && existingBooking.status !== 'cancelled') {
-            return res.status(400).json({ message: 'Already booked or pending' });
-        }
 
         const booking = await Booking.create({
             userId: req.user.id,
