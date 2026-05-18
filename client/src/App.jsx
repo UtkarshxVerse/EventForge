@@ -10,6 +10,7 @@ import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentFailed from './pages/PaymentFailed';
+import NewEvent from './pages/NewEvent';
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                         <Route path="/admin" element={<div className="container mx-auto px-4 py-32"><AdminDashboard /></div>} />
                         <Route path="/payment-success" element={<div className="container mx-auto px-4 py-32"><PaymentSuccess /></div>} />
                         <Route path="/payment-failed" element={<div className="container mx-auto px-4 py-32"><PaymentFailed /></div>} />
+                        <Route path="/admin/create-event" element={<div className="container mx-auto px-4 py-32"><NewEvent /></div>} />
                         <Route path="*" element={<h1 className="text-3xl font-bold text-center mt-32">404 - Page Not Found</h1>} />
                     </Routes>
                 </main>

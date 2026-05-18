@@ -10,11 +10,6 @@ const AdminDashboard = () => {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const [showEventForm, setShowEventForm] = useState(false);
-    const [formData, setFormData] = useState({
-        title: '', description: '', date: '', location: '', category: '', totalSeats: '', ticketPrice: '', image: ''
-    });
-
     useEffect(() => {
         if (!user || user.role !== 'admin') {
             navigate('/login');
@@ -35,18 +30,6 @@ const AdminDashboard = () => {
             console.error('Error fetching admin data', error);
         } finally {
             setLoading(false);
-        }
-    };
-
-    const handleCreateEvent = async (e) => {
-        e.preventDefault();
-        try {
-            await api.post('/events', formData);
-            setShowEventForm(false);
-            setFormData({ title: '', description: '', date: '', location: '', category: '', totalSeats: '', ticketPrice: '', image: '' });
-            fetchData();
-        } catch (error) {
-            alert(error.response?.data?.message || 'Error creating event');
         }
     };
 
@@ -94,10 +77,10 @@ const AdminDashboard = () => {
                             <p className="text-gray-600 text-base sm:text-lg leading-relaxed">Manage your events, review bookings, and keep the platform running smoothly.</p>
                         </div>
                         <button
-                            onClick={() => setShowEventForm(!showEventForm)}
+                            onClick={() => navigate('/admin/create-event')}
                             className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white font-bold py-3 px-6 rounded-2xl hover:opacity-95 transition shadow-xl"
                         >
-                            {showEventForm ? 'Cancel Creation' : '+ Create New Event'}
+                            + Create New Event
                         </button>
                     </div>
                 </div>
@@ -127,27 +110,6 @@ const AdminDashboard = () => {
                         <div className="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center text-lg font-bold">⏳</div>
                     </div>
                 </div>
-
-                {showEventForm && (
-                    <div className="glass-card p-8 rounded-[2rem] border border-white/40 mb-8 shadow-2xl">
-                        <h2 className="text-2xl font-bold mb-6 text-[#1e1b4b]">Create New Event</h2>
-                        <form onSubmit={handleCreateEvent} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input required type="text" placeholder="Event Title" className="border border-gray-200 bg-white/80 px-4 py-3 rounded-2xl focus:ring-2 focus:ring-indigo-400 outline-none transition" value={formData.title} onChange={e => setFormData({ ...formData, title: e.target.value })} />
-                            <input required type="text" placeholder="Category (e.g., Tech, Music)" className="border border-gray-200 bg-white/80 px-4 py-3 rounded-2xl focus:ring-2 focus:ring-indigo-400 outline-none transition" value={formData.category} onChange={e => setFormData({ ...formData, category: e.target.value })} />
-                            <input required type="date" className="border border-gray-200 bg-white/80 px-4 py-3 rounded-2xl focus:ring-2 focus:ring-indigo-400 outline-none transition" value={formData.date} onChange={e => setFormData({ ...formData, date: e.target.value })} />
-                            <input required type="text" placeholder="Location" className="border border-gray-200 bg-white/80 px-4 py-3 rounded-2xl focus:ring-2 focus:ring-indigo-400 outline-none transition" value={formData.location} onChange={e => setFormData({ ...formData, location: e.target.value })} />
-                            <input required type="number" placeholder="Total Seats" className="border border-gray-200 bg-white/80 px-4 py-3 rounded-2xl focus:ring-2 focus:ring-indigo-400 outline-none transition" value={formData.totalSeats} onChange={e => setFormData({ ...formData, totalSeats: e.target.value })} />
-                            <input required type="number" placeholder="Ticket Price (0 for free)" className="border border-gray-200 bg-white/80 px-4 py-3 rounded-2xl focus:ring-2 focus:ring-indigo-400 outline-none transition" value={formData.ticketPrice} onChange={e => setFormData({ ...formData, ticketPrice: e.target.value })} />
-
-                            <div className="md:col-span-2">
-                                <input type="text" placeholder="Image URL (Provide any direct link to an image)" className="w-full border border-gray-200 bg-white/80 px-4 py-3 rounded-2xl focus:ring-2 focus:ring-indigo-400 outline-none transition" value={formData.image} onChange={e => setFormData({ ...formData, image: e.target.value })} />
-                            </div>
-
-                            <textarea required placeholder="Event Description" className="border border-gray-200 bg-white/80 px-4 py-3 rounded-2xl md:col-span-2 h-32 focus:ring-2 focus:ring-indigo-400 outline-none transition" value={formData.description} onChange={e => setFormData({ ...formData, description: e.target.value })} />
-                            <button type="submit" className="md:col-span-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white font-bold py-3 mt-2 rounded-2xl hover:opacity-95 transition shadow-xl">Publish Event</button>
-                        </form>
-                    </div>
-                )}
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="flex flex-col">

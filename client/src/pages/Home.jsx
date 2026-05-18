@@ -230,7 +230,7 @@ const Home = ({ viewOnly }) => {
                                 className="absolute inset-4 border-4 border-purple-100 border-b-purple-600 rounded-full"
                             />
                         </div>
-                        <p className="text-indigo-400 font-black text-xs tracking-widest uppercase animate-pulse">Establishing Connection...</p>
+                        <p className="text-indigo-400 font-black text-xs tracking-widest uppercase animate-pulse">Synchronizing Experiences...</p>
                     </div>
                 ) : events.length === 0 ? (
                     <motion.div
@@ -239,9 +239,8 @@ const Home = ({ viewOnly }) => {
                         className="text-center py-40 border-4 border-dashed border-indigo-50 rounded-[3rem]"
                     >
                         <FaCompass className="text-indigo-100 text-8xl mx-auto mb-8" />
-                        <h3 className="text-3xl font-black text-[#1e1b4b] mb-4">No Signals Detected.</h3>
-                        <p className="text-gray-400 font-medium mb-12 text-lg">Your search didn't pick up any frequencies in the current area.</p>
-                        <button onClick={() => setSearch('')} className="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl hover:bg-[#1e1b4b] transition-all active:scale-95">Reset Radar</button>
+                        <h3 className="text-3xl font-black text-[#1e1b4b] mb-4">No Events Found !</h3>
+                        <button onClick={() => setSearch('')} className="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl hover:bg-[#1e1b4b] transition-all active:scale-95">Reset Search</button>
                     </motion.div>
                 ) : (
                     <div className="space-y-20">
